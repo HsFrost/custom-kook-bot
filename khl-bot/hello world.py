@@ -15,7 +15,7 @@ bot = Bot(token=config['token'])
 
 
 
-@bot.command(prefix=['.'],name='hello')
+@bot.command(name='hello')
 async def roll(msg: Message):
     # quote reply
     await msg.reply('world for you!')
