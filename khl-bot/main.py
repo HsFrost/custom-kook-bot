@@ -15,6 +15,8 @@ with open('config/khl-bot-config.json', 'r', encoding='utf-8') as a, open('confi
 
 # bot凭证
 bot = Bot(token=khl_bot_config['token'])
+# APEX api
+auth=apexlegends_api['auth_key']
 
 # 指令
 @bot.command(name='hello')
@@ -30,10 +32,9 @@ async def roll(msg: Message,str:str=''):
 
 @bot.command(name='apex')
 async def roll(msg: Message,player:str='',platform:str='PC'):
-    auth=apexlegends_api['auth_key']
     if player != '':
-        solve = requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")
-
+        solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
+        await msg.reply(f'NAME={solve["global"]["name"]},LEVEL={solve["global"]["level"]}')
     elif player == '':
         await msg.reply("Error,can't solve,maby you did not input PlayerNAME.")
 
