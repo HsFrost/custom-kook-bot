@@ -32,12 +32,16 @@ async def roll(msg: Message,str:str=''):
 
 @bot.command(name='apex')
 async def roll(msg: Message,player:str='',platform:str='PC'):
-    if player != '':
-        solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
-        await msg.reply(f'NAME={solve["global"]["name"]},LEVEL={solve["global"]["level"]}')
-    elif player == '':
-        await msg.reply("Error,can't solve,maby you did not input PlayerNAME.")
+    solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
 
+    if "Error" not in solve.keys():
+        player_name = solve["global"]["name"]
+        player_level = solve["global"]["level"]
+        await msg.reply(f'NAME={player_name},LEVEL={player_level}')
+    elif "Error" in solve.keys():
+        await msg.reply(f'ERROR:{solve["Error"]}')
+    else:
+        await msg.reply("Error,some thing has wrong")
 #GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
 
 @bot.command(name='shaizi')
