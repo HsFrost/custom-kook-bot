@@ -31,17 +31,22 @@ async def roll(msg: Message,str:str=''):
         await msg.reply('Error,some thing has wrong')
 
 @bot.command(name='apex')
-async def roll(msg: Message,player:str='',platform:str='PC'):
+async def roll(msg: Message,str:str='',player:str='',platform:str='PC'):
     solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
-
-    if "Error" not in solve.keys():
-        player_name = solve["global"]["name"]
-        player_level = solve["global"]["level"]
-        await msg.reply(f'NAME={player_name},LEVEL={player_level}')
-    elif "Error" in solve.keys():
-        await msg.reply(f'ERROR:{solve["Error"]}')
+    if (str=='查询') or (str==''):
+        if "Error" not in solve.keys():
+            player_name = solve["global"]["name"]
+            player_level = solve["global"]["level"]
+            player_rank = f'RANK_SCORE={solve["global"]["rank"]["rankScore"]},RANK_NAME={solve["global"]["rank"]["rankName"]}:{solve["global"]["rank"]["rankDiv"]}'
+            await msg.reply(f'NAME={player_name},LEVEL={player_level},RANK={player_rank}')
+        elif "Error" in solve.keys():
+            await msg.reply(f'ERROR:{solve["Error"]}')
+        else:
+            await msg.reply("Error,some thing has wrong")
+    elif str=='地图':
+        await msg.reply("暂时未实装")
     else:
-        await msg.reply("Error,some thing has wrong")
+        await msg.reply("Exception")
 #GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
 
 @bot.command(name='shaizi')
