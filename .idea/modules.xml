@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/custom-khl-bot.iml" filepath="$PROJECT_DIR$/.idea/custom-khl-bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Python/pyNetwork/.idea/pyNetwork.iml" filepath="$PROJECT_DIR$/../../Python/pyNetwork/.idea/pyNetwork.iml" />
     </modules>
   </component>
 </project>
