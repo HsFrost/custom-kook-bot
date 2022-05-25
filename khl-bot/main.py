@@ -7,27 +7,24 @@ import requests
 from khl import Bot, Message, EventTypes, Event
 from khl.card import CardMessage, Card, Module, Element, Types, Struct
 
-
 # 控制台日志输出
 logging.basicConfig(level='INFO')
 
-
 # 导入凭证json
-with open('config/khl-bot-config.json', 'r', encoding='utf-8') as a, open('config/apexlegends-api.json', 'r', encoding='utf-8') as b:
+with open('config/khl_bot_config.json', 'r', encoding='utf-8') as a, open('config/apex_legends_api.json', 'r',
+                                                                          encoding='utf-8') as b:
     khl_bot_config = json.load(a)
-    apexlegends_api = json.load(b)
-
+    apex_legends_api = json.load(b)
 
 # bot凭证
 bot = Bot(token=khl_bot_config['token'])
 # APEX api凭证
-auth=apexlegends_api['auth_key']
-
+auth = apex_legends_api['auth_key']
 
 
 # hello指令
 @bot.command(name='hello')
-async def hello(msg: Message,str:str=''):
+async def hello(msg: Message, str: str = ''):
     '''
     :param msg: (忽略)
     :param str: 指令['','time','help']
@@ -42,9 +39,10 @@ async def hello(msg: Message,str:str=''):
     else:
         await msg.reply('Error,some thing has wrong')
 
+
 # apex战绩查询
 @bot.command(name='apex')
-async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
+async def apex(msg: Message, str: str = '', player: str = '', platform: str = 'PC'):
     '''
     :param msg: (默认值)
     :param str: 指令
@@ -52,52 +50,52 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
     :param platform: 玩家平台 ['PC'(Origin or Steam),'PS4'(Playstation 4/5) or 'X1'(Xbox)]
     :return:
     '''
-
-    if str=='查询':
-        #solve为向api发送请求的返回解
-        solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
+    if str == '查询':
+        # solve为向api发送请求的返回解
+        solve = (
+            requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
         if "Error" not in solve.keys():
-            #几组玩家参数
+            # 几组玩家参数
             player_name = f'玩家：{solve["global"]["name"]}'
             player_level = f'等级：{solve["global"]["level"]}'
             player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}:{solve["global"]["rank"]["rankScore"]}'
 
-            #回复
-            cm = CardMessage()
-            #封装卡片类
-            c1 = Card(
-                #子项
-                Module.Header('查询结果：'),
-                # 分割线
-                Module.Divider(),
-                # 子项
-                Module.Section(f'{player_name}\n{player_level}\n{player_rank}',accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}'),mode=Types.SectionMode.RIGHT),
-
-
-                # 子项
-                Module.Container(Element.Image(src=f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}')),
-                #颜色设置
-                color='#F8FF18')
-            cm.append(c1)
-
-            await msg.reply(cm)
-
+            await msg.reply(
+                CardMessage(Card(
+                    # 子项
+                    Module.Header('查询结果：'),
+                    # 分割线
+                    Module.Divider(),
+                    # 子项
+                    Module.Section(f'{player_name}\n{player_level}\n{player_rank}',
+                                   accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}'),
+                                   mode=Types.SectionMode.RIGHT),
+                    # 子项
+                    Module.Container(Element.Image(src=f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}')),
+                    # 颜色设置
+                    color='#F8FF18'))
+            )
+        # 选择支
         elif "Error" in solve.keys():
             await msg.reply(f'ERROR:{solve["Error"]}')
+        # 选择支
         else:
             await msg.reply("Error,some thing has wrong")
-    elif str=='地图':
+    # 选择支
+    elif str == '地图':
         await msg.reply("暂时未实装")
-    elif str=='帮助':
+    # 选择支
+    elif str == '帮助':
         await msg.reply("暂时未实装")
+    # 选择支
     else:
         await msg.reply("Command not Found")
-#GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
 
 
+# GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
 
 
-#掷色子
+# 掷色子
 @bot.command(name='roll')
 async def roll(msg: Message, t_min: int, t_max: int, n: int = 1):
     '''
@@ -109,7 +107,6 @@ async def roll(msg: Message, t_min: int, t_max: int, n: int = 1):
     '''
     result = [random.randint(t_min, t_max) for i in range(n)]
     await msg.reply(f'you got: {result}')
-
 
 
 bot.run()
