@@ -59,28 +59,29 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
         if "Error" not in solve.keys():
 
             #几组玩家参数
-            player_name = solve["global"]["name"]
-            player_level = solve["global"]["level"]
-            player_rank = f'{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}_{solve["global"]["rank"]["rankScore"]}'
+            player_name = f'玩家：{solve["global"]["name"]}'
+            player_level = f'等级：{solve["global"]["level"]}'
+            player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}_{solve["global"]["rank"]["rankScore"]}'
 
             #回复
             cm = CardMessage()
             c1 = Card(
                 Module.Header('查询结果：'),
                 Module.Divider(),
-                Module.Header(f'{player_name},{player_level}'),
-                color='#F8FF18')
-            cm.append(c1)
-
-
-            c2 = Card(
-                Module.Container(
-                    Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
+                Module.Section(
+                    f'{player_name},{player_level}',
+                    f'{player_rank}',
                     Element.Image(src=solve["global"]["rank"]["rankImg"]),
                 ),
-                Module.Header(f'{player_rank}'),
-                color='#2288EE')
-            cm.append(c2)
+
+                Module.Container(
+                    Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
+                ),
+
+
+                color='#F8FF18')
+
+            cm.append(c1)
 
             await msg.reply(cm)
 
