@@ -1,0 +1,586 @@
+{
+    "global": {
+        "name": "FROST",
+        "uid": 1006173909449,
+        "avatar": "",
+        "platform": "PC",
+        "level": 407,
+        "toNextLevelPercent": 1,
+        "internalUpdateCount": 8450,
+        "bans": {
+            "isActive": false,
+            "remainingSeconds": 0,
+            "last_banReason": "COMPETITIVE_DODGE_COOLDOWN"
+        },
+        "rank": {
+            "rankScore": 6072,
+            "rankName": "Gold",
+            "rankDiv": 4,
+            "ladderPosPlatform": -1,
+            "rankImg": "https:\/\/api.mozambiquehe.re\/assets\/ranks\/gold4.png",
+            "rankedSeason": "season13_split_1"
+        },
+        "arena": {
+            "rankScore": 2642,
+            "rankName": "Silver",
+            "rankDiv": 2,
+            "ladderPosPlatform": -1,
+            "rankImg": "https:\/\/api.mozambiquehe.re\/assets\/ranks\/silver2.png",
+            "rankedSeason": "arenas13_split_1"
+        },
+        "battlepass": {
+            "level": "-1",
+            "history": {
+                "season1": -1,
+                "season2": -1,
+                "season3": -1,
+                "season4": -1,
+                "season5": -1,
+                "season6": -1,
+                "season7": -1,
+                "season8": -1,
+                "season9": -1,
+                "season10": -1,
+                "season11": -1,
+                "season12": -1,
+                "season13": -1
+            }
+        },
+        "badges": [
+            {
+                "name": "You're Tiering Me Apart: Ranked Season 11",
+                "value": 10
+            },
+            {
+                "name": "Raiders Plunderer",
+                "value": 0
+            },
+            {
+                "name": "Raiders",
+                "value": 0
+            },
+            {
+                "name": "Pride",
+                "value": 0
+            },
+            {
+                "name": "Dark Depths Trident",
+                "value": 0
+            },
+            {
+                "name": "Club Legacy",
+                "value": 0
+            },
+            {
+                "name": "Arenas Win Streak",
+                "value": 10
+            }
+        ]
+    },
+    "realtime": {
+        "lobbyState": "open",
+        "isOnline": 0,
+        "isInGame": 0,
+        "canJoin": 0,
+        "partyFull": 0,
+        "selectedLegend": "Horizon",
+        "currentState": "offline",
+        "currentStateSinceTimestamp": -1,
+        "currentStateAsText": "Offline"
+    },
+    "legends": {
+        "selected": {
+            "LegendName": "Horizon",
+            "data": [
+                {
+                    "name": "BR Damage",
+                    "value": 594265,
+                    "key": "damage",
+                    "global": false
+                }
+            ],
+            "gameInfo": {
+                "skin": "Solaris",
+                "skinRarity": "Legendary",
+                "frame": "NEWT's Cradle",
+                "frameRarity": "Legendary",
+                "pose": "Tropical Menagerie",
+                "poseRarity": "Epic",
+                "intro": "Particle colliders or R301s",
+                "introRarity": "Common",
+                "badges": [
+                    {
+                        "name": "Rapid Elimination",
+                        "value": 0,
+                        "category": "Horizon"
+                    },
+                    {
+                        "name": "Assassin",
+                        "value": 4,
+                        "category": "Horizon"
+                    },
+                    {
+                        "name": "Horizon's Wrath",
+                        "value": 4,
+                        "category": "Horizon"
+                    }
+                ]
+            },
+            "ImgAssets": {
+                "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/horizon.png",
+                "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/horizon.jpg"
+            }
+        },
+        "all": {
+            "Global": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/global.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/global.jpg"
+                }
+            },
+            "Revenant": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/revenant.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/revenant.jpg"
+                }
+            },
+            "Crypto": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/crypto.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/crypto.jpg"
+                }
+            },
+            "Horizon": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 437,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 361794,
+                            "topPercent": 19.99
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Damage",
+                        "value": 594265,
+                        "key": "damage",
+                        "rank": {
+                            "rankPos": 54851,
+                            "topPercent": 6.46
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": 2283,
+                            "topPercent": 50.35
+                        }
+                    },
+                    {
+                        "name": "BR Top 3",
+                        "value": 26,
+                        "key": "top_3",
+                        "rank": {
+                            "rankPos": 4205,
+                            "topPercent": 43.63
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "gameInfo": {
+                    "badges": [
+                        {
+                            "name": "Assassin",
+                            "value": 4
+                        },
+                        {
+                            "name": "Horizon's Wrath",
+                            "value": 4
+                        },
+                        {
+                            "name": "Rapid Elimination",
+                            "value": 0
+                        }
+                    ]
+                },
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/horizon.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/horizon.jpg"
+                }
+            },
+            "Gibraltar": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 24,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 1211446,
+                            "topPercent": 61.36
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/gibraltar.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/gibraltar.jpg"
+                }
+            },
+            "Wattson": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/wattson.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/wattson.jpg"
+                }
+            },
+            "Fuse": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/fuse.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/fuse.jpg"
+                }
+            },
+            "Bangalore": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/bangalore.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/bangalore.jpg"
+                }
+            },
+            "Wraith": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 600,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 885975,
+                            "topPercent": 23.87
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Damage",
+                        "value": 246409,
+                        "key": "damage",
+                        "rank": {
+                            "rankPos": 628110,
+                            "topPercent": 42.37
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Season 9 wins",
+                        "value": 14,
+                        "key": "wins_season_9",
+                        "rank": {
+                            "rankPos": 18762,
+                            "topPercent": 18.87
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Season 11 kills",
+                        "value": 297,
+                        "key": "kills_season_11",
+                        "rank": {
+                            "rankPos": 25368,
+                            "topPercent": 27.22
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "gameInfo": {
+                    "badges": [
+                        {
+                            "name": "Wraith's Wrath",
+                            "value": 0
+                        },
+                        {
+                            "name": "Assassin",
+                            "value": 3
+                        }
+                    ]
+                },
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/wraith.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/wraith.jpg"
+                }
+            },
+            "Octane": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 99,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 2249539,
+                            "topPercent": 62.97
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "gameInfo": {
+                    "badges": [
+                        {
+                            "name": "Rapid Elimination",
+                            "value": 0
+                        }
+                    ]
+                },
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/octane.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/octane.jpg"
+                }
+            },
+            "Bloodhound": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 28,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 2993615,
+                            "topPercent": 70.25
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Damage",
+                        "value": 12498,
+                        "key": "damage",
+                        "rank": {
+                            "rankPos": 1239157,
+                            "topPercent": 95.09
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/bloodhound.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/bloodhound.jpg"
+                }
+            },
+            "Caustic": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 8,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 1322336,
+                            "topPercent": 88.98
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/caustic.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/caustic.jpg"
+                }
+            },
+            "Lifeline": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/lifeline.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/lifeline.jpg"
+                }
+            },
+            "Pathfinder": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 39,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 2110374,
+                            "topPercent": 64.19
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Damage",
+                        "value": 22393,
+                        "key": "damage",
+                        "rank": {
+                            "rankPos": 938258,
+                            "topPercent": 84.6
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/pathfinder.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/pathfinder.jpg"
+                }
+            },
+            "Loba": {
+                "data": [
+                    {
+                        "name": "BR Kills",
+                        "value": 115,
+                        "key": "kills",
+                        "rank": {
+                            "rankPos": 697040,
+                            "topPercent": 39.71
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Damage",
+                        "value": 49237,
+                        "key": "damage",
+                        "rank": {
+                            "rankPos": 383741,
+                            "topPercent": 59.12
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    },
+                    {
+                        "name": "BR Season 9 kills",
+                        "value": 60,
+                        "key": "kills_season_9",
+                        "rank": {
+                            "rankPos": 51209,
+                            "topPercent": 40.76
+                        },
+                        "rankPlatformSpecific": {
+                            "rankPos": "NOT_CALCULATED_YET",
+                            "topPercent": "NOT_CALCULATED_YET"
+                        }
+                    }
+                ],
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/loba.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/loba.jpg"
+                }
+            },
+            "Mirage": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/mirage.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/mirage.jpg"
+                }
+            },
+            "Rampart": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/rampart.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/rampart.jpg"
+                }
+            },
+            "Valkyrie": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/valkyrie.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/valkyrie.jpg"
+                }
+            },
+            "Seer": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/seer.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/seer.jpg"
+                }
+            },
+            "Ash": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/ash.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/ash.jpg"
+                }
+            },
+            "Mad Maggie": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/mad maggie.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/mad maggie.jpg"
+                }
+            },
+            "Newcastle": {
+                "ImgAssets": {
+                    "icon": "https:\/\/api.mozambiquehe.re\/assets\/icons\/newcastle.png",
+                    "banner": "https:\/\/api.mozambiquehe.re\/assets\/banners\/newcastle.jpg"
+                }
+            }
+        }
+    },
+    "mozambiquehere_internal": {
+        "isNewToDB": false,
+        "claimedBy": "1653193282",
+        "APIAccessType": "BASIC",
+        "ClusterID": "6",
+        "rate_limit": {
+            "max_per_second": 3,
+            "current_req": null
+        },
+        "clusterSrv": "MAIN-CLUSTER"
+    },
+    "ALS": {
+        "isALSDataEnabled": false
+    },
+    "total": {
+        "kills": {
+            "name": "BR Kills",
+            "value": 1350
+        },
+        "damage": {
+            "name": "BR Damage",
+            "value": 924802
+        },
+        "top_3": {
+            "name": "BR Top 3",
+            "value": 26
+        },
+        "wins_season_9": {
+            "name": "BR Season 9 wins",
+            "value": 14
+        },
+        "kills_season_11": {
+            "name": "BR Season 11 kills",
+            "value": 297
+        },
+        "kills_season_9": {
+            "name": "BR Season 9 kills",
+            "value": 60
+        },
+        "kd": {
+            "value": "-1",
+            "name": "KD"
+        }
+    }
+}
