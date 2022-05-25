@@ -29,9 +29,8 @@ auth=apexlegends_api['auth_key']
 @bot.command(name='hello')
 async def hello(msg: Message,str:str=''):
     '''
-
     :param msg: (忽略)
-    :param str: 指令{'','time','help'}
+    :param str: 指令['','time','help']
     :return:
     '''
     if str == '':
@@ -46,23 +45,29 @@ async def hello(msg: Message,str:str=''):
 # apex战绩查询
 @bot.command(name='apex')
 async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
+    '''
+    :param msg: (默认值)
+    :param str: 指令
+    :param player: 玩家ID
+    :param platform: 玩家平台 ['PC'(Origin or Steam),'PS4'(Playstation 4/5) or 'X1'(Xbox)]
+    :return:
+    '''
 
     if str=='查询':
         #solve为向api发送请求的返回解
         solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
         if "Error" not in solve.keys():
-
+            #几组玩家参数
             player_name = solve["global"]["name"]
             player_level = solve["global"]["level"]
             player_rank = f'RANK_SCORE={solve["global"]["rank"]["rankScore"]},RANK_NAME={solve["global"]["rank"]["rankName"]}:{solve["global"]["rank"]["rankDiv"]}'
-
+            #回复
             await msg.reply(
                 CardMessage(
                     Card(
                         Module.Header('查询结果：'),
                         Module.Header(f'{player_name},{player_level}'),
                         Module.Section(f'{player_rank}')
-
                     )))
 
         elif "Error" in solve.keys():
@@ -84,7 +89,6 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
 @bot.command(name='roll')
 async def roll(msg: Message, t_min: int, t_max: int, n: int = 1):
     '''
-
     :param msg: （忽略）
     :param t_min: 色子的最小点数
     :param t_max: 色子的最大点数
