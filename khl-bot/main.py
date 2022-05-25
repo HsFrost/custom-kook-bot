@@ -33,7 +33,7 @@ async def roll(msg: Message,str:str=''):
 @bot.command(name='apex')
 async def roll(msg: Message,str:str='',player:str='',platform:str='PC'):
     solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
-    if (str=='查询') or (str==''):
+    if (str=='查询'):
         if "Error" not in solve.keys():
             player_name = solve["global"]["name"]
             player_level = solve["global"]["level"]
@@ -46,7 +46,7 @@ async def roll(msg: Message,str:str='',player:str='',platform:str='PC'):
     elif str=='地图':
         await msg.reply("暂时未实装")
     else:
-        await msg.reply("Exception")
+        await msg.reply("Command not Found")
 #GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
 
 @bot.command(name='shaizi')
