@@ -68,19 +68,9 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
             c1 = Card(
                 Module.Header('查询结果：'),
                 Module.Divider(),
-                Module.Section(
-                    f'{player_name},{player_level}',
-                    f'{player_rank}',
-                    Element.Image(src=solve["global"]["rank"]["rankImg"]),
-                ),
-
-                Module.Container(
-                    Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
-                ),
-
-
-                color='#F8FF18')
-
+                Module.Section(text=f'{player_name},{player_level},{player_rank}',accessory=Element.Image(src=solve["global"]["rank"]["rankImg"])),
+                Module.Container(Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"])),
+                color='#F8FF18'))
             cm.append(c1)
 
             await msg.reply(cm)
