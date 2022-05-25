@@ -7,6 +7,8 @@ import requests
 from khl import Bot, Message
 from khl.card import CardMessage, Card, Module, Element, Types
 
+import command_hello
+
 # 控制台日志输出
 logging.basicConfig(level='INFO')
 
@@ -21,9 +23,12 @@ bot = Bot(token=khl_bot_config['token'])
 # APEX api凭证
 auth = apex_legends_api['auth_key']
 
+# 命令符号
+PREFIX = ['.']
+
 
 # hello指令
-@bot.command(name='hello')
+@bot.command(name='hello', prefixes=PREFIX)
 async def hello(msg: Message, term: str = ''):
 
     # :param msg: (忽略)
@@ -39,31 +44,9 @@ async def hello(msg: Message, term: str = ''):
             CardMessage(Card(
                 Module.Header('帮助文档'),
                 Module.Divider(),
-                Module.Section(Element.Text(
-"""
-**命令**
-你好
-`/hello {term}`
-    `term`:
-            `help:`显示帮助文档
-            `time:`显示当前时间
-
-APEX LEGENDS信息查询
-`/apex {term,player,platform}`
-    `term:`
-            `地图:`
-                    暂未实装
-            `查询:`
-                    `player:`玩家ID
-                    `platform:`玩家平台 {'PC'(Origin or Steam),'PS4'(Playstation 4/5) or 'X1'(Xbox)}
-
-掷色子
-`/roll {最小值，最大值，掷几次}`
-""",
-                type=Types.Text.KMD
-                    )),
+                Module.Section(Element.Text(command_hello.help(),type=Types.Text.KMD)),
+                Module.Divider(),
                 color='#0DFF94'),
-                Module
             )
         )
     else:
@@ -71,7 +54,7 @@ APEX LEGENDS信息查询
 
 
 # apex战绩查询
-@bot.command(name='apex')
+@bot.command(name='apex', prefixes=PREFIX)
 async def apex(msg: Message, term: str = '', player: str = '', platform: str = 'PC'):
 
     # :param msg: (默认值)
@@ -132,7 +115,7 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
 
 
 # 掷色子
-@bot.command(name='roll')
+@bot.command(name='roll', prefixes=PREFIX)
 async def roll(msg: Message, t_min: int, t_max: int, n: int = 1):
 
     # :param msg: （忽略）
