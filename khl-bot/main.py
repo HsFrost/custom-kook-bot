@@ -23,6 +23,7 @@ bot = Bot(token=khl_bot_config['token'])
 # APEX api凭证
 auth = apex_legends_api['auth_key']
 
+
 # 命令符号
 PREFIX = ['.']
 
@@ -45,7 +46,6 @@ async def hello(msg: Message, term: str = ''):
                 Module.Header('帮助文档'),
                 Module.Divider(),
                 Module.Section(Element.Text(command_hello_help.help(), type=Types.Text.KMD)),
-                Module.Divider(),
                 color='#0DFF94'),
             )
         )
