@@ -60,7 +60,7 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
             #几组玩家参数
             player_name = f'玩家：{solve["global"]["name"]}'
             player_level = f'等级：{solve["global"]["level"]}'
-            player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}_{solve["global"]["rank"]["rankScore"]}'
+            player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}:{solve["global"]["rank"]["rankScore"]}'
 
             #回复
             cm = CardMessage()
