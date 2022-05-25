@@ -65,23 +65,21 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
 
             #回复
             cm = CardMessage()
-            c1 = Card(color='#000000')
-            c1.append(
-            Module.Header('查询结果：'),
-            Module.Divider(),
-            Module.Header(f'{player_name},{player_level}')
-            )
+            c1 = Card(
+                Module.Header('查询结果：'),
+                Module.Divider(),
+                Module.Header(f'{player_name},{player_level}'),
+                color='#F8FF18')
             cm.append(c1)
 
 
-            c2 = Card(color='#000000')
-            c2.append(
-            Module.Container(
-                Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
-                Element.Image(src=solve["global"]["rank"]["rankImg"]),
-            ),
-            Module.Header(f'{player_rank}')
-            )
+            c2 = Card(
+                Module.Container(
+                    Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
+                    Element.Image(src=solve["global"]["rank"]["rankImg"]),
+                ),
+                Module.Header(f'{player_rank}'),
+                color='#2288EE')
             cm.append(c2)
 
             await msg.reply(cm)
