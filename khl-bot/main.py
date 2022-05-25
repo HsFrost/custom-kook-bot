@@ -44,7 +44,7 @@ async def hello(msg: Message, term: str = ''):
             CardMessage(Card(
                 Module.Header('帮助文档'),
                 Module.Divider(),
-                Module.Section(Element.Text(command_hello.help(),type=Types.Text.KMD)),
+                Module.Section(Element.Text(command_hello_help.help(), type=Types.Text.KMD)),
                 Module.Divider(),
                 color='#0DFF94'),
             )
