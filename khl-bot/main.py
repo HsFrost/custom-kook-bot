@@ -57,18 +57,34 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
         #solve为向api发送请求的返回解
         solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
         if "Error" not in solve.keys():
+
             #几组玩家参数
             player_name = solve["global"]["name"]
             player_level = solve["global"]["level"]
-            player_rank = f'RANK_SCORE={solve["global"]["rank"]["rankScore"]},RANK_NAME={solve["global"]["rank"]["rankName"]}:{solve["global"]["rank"]["rankDiv"]}'
+            player_rank = f'{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}_{solve["global"]["rank"]["rankScore"]}'
+
             #回复
-            await msg.reply(
-                CardMessage(
-                    Card(
-                        Module.Header('查询结果：'),
-                        Module.Header(f'{player_name},{player_level}'),
-                        Module.Section(f'{player_rank}')
-                    )))
+            cm = CardMessage()
+            c1 = Card(color='#000000')
+            c1.append(
+            Module.Header('查询结果：'),
+            Module.Divider(),
+            Module.Header(f'{player_name},{player_level}')
+            )
+            cm.append(c1)
+
+
+            c2 = Card(color='#000000')
+            c2.append(
+            Module.Container(
+                Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"]),
+                Element.Image(src=solve["global"]["rank"]["rankImg"]),
+            ),
+            Module.Header(f'{player_rank}')
+            )
+            cm.append(c2)
+
+            await msg.reply(cm)
 
         elif "Error" in solve.keys():
             await msg.reply(f'ERROR:{solve["Error"]}')
