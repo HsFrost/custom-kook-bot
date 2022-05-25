@@ -57,7 +57,6 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
         #solve为向api发送请求的返回解
         solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
         if "Error" not in solve.keys():
-
             #几组玩家参数
             player_name = f'玩家：{solve["global"]["name"]}'
             player_level = f'等级：{solve["global"]["level"]}'
@@ -68,9 +67,9 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
             c1 = Card(
                 Module.Header('查询结果：'),
                 Module.Divider(),
-                Module.Section(text=f'{player_name},{player_level},{player_rank}',accessory=Element.Image(src=solve["global"]["rank"]["rankImg"])),
-                Module.Container(Element.Image(src=solve["legends"]["selected"]["ImgAssets"]["icon"])),
-                color='#F8FF18'))
+                Module.Section(text=f'{player_name},{player_level},{player_rank}',accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}')),
+                Module.Container(Element.Image(src=f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}')),
+                color='#F8FF18')
             cm.append(c1)
 
             await msg.reply(cm)
