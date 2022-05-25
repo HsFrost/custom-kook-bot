@@ -64,11 +64,19 @@ async def apex(msg: Message,str:str='',player:str='',platform:str='PC'):
 
             #回复
             cm = CardMessage()
+            #封装卡片类
             c1 = Card(
+                #子项
                 Module.Header('查询结果：'),
+                # 分割线
                 Module.Divider(),
-                Module.Section(text=f'{player_name},{player_level},{player_rank}',accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}')),
+                # 子项
+                Module.Section(f'{player_name}\n{player_level}\n{player_rank}',accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}'),mode=Types.SectionMode.RIGHT),
+
+
+                # 子项
                 Module.Container(Element.Image(src=f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}')),
+                #颜色设置
                 color='#F8FF18')
             cm.append(c1)
 
