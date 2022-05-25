@@ -35,7 +35,35 @@ async def hello(msg: Message, term: str = ''):
     elif term == 'time':
         await msg.reply(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
     elif term == 'help':
-        await msg.reply('什么咱们这机器人哪有那种高级功能')
+        await msg.reply(
+            CardMessage(Card(
+                Module.Header('帮助文档'),
+                Module.Divider(),
+                Module.Section(Element.Text(
+"""
+**命令**
+你好
+`/hello {term}`
+    `term`:
+            `help:`显示帮助文档
+            `time:`显示当前时间
+
+APEX LEGENDS信息查询
+`/apex {term,player,platform}`
+    `term:`
+            `地图:`
+                    暂未实装
+            `查询:`
+                    `player:`玩家ID
+                    `platform:`玩家平台 {'PC'(Origin or Steam),'PS4'(Playstation 4/5) or 'X1'(Xbox)}
+
+掷色子
+`/roll {最小值，最大值，掷几次}`
+""",
+                type=Types.Text.KMD
+                    )),
+                color='#0DFF94'))
+        )
     else:
         await msg.reply('Error,some thing has wrong')
 
@@ -61,7 +89,7 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
             player_level = f'等级：{solve["global"]["level"]}'
             player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}:'\
                           f'{solve["global"]["rank"]["rankScore"]} '
-            #回复
+            # 回复
             await msg.reply(
                 CardMessage(Card(
                     # 子项
