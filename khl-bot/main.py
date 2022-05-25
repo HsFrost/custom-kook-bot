@@ -7,7 +7,7 @@ import requests
 from khl import Bot, Message
 from khl.card import CardMessage, Card, Module, Element, Types
 
-import command_hello
+import command_hello_help
 
 # 控制台日志输出
 logging.basicConfig(level='INFO')
