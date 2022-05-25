@@ -62,7 +62,9 @@ APEX LEGENDS信息查询
 """,
                 type=Types.Text.KMD
                     )),
-                color='#0DFF94'))
+                color='#0DFF94'),
+                Module
+            )
         )
     else:
         await msg.reply('Error,some thing has wrong')
@@ -89,6 +91,9 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
             player_level = f'等级：{solve["global"]["level"]}'
             player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}:'\
                           f'{solve["global"]["rank"]["rankScore"]} '
+            player_rank_icon = f'{solve["global"]["rank"]["rankImg"]}'
+            player_player = f'{solve["legends"]["selected"]["LegendName"]}'
+            player_player_icon = f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}'
             # 回复
             await msg.reply(
                 CardMessage(Card(
@@ -98,14 +103,14 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
                     Module.Divider(),
                     # 子项
                     Module.Section(f'{player_name}\n{player_level}\n{player_rank}',
-                                   accessory=Element.Image(src=f'{solve["global"]["rank"]["rankImg"]}'),
+                                   accessory=Element.Image(src=f'{player_rank_icon}'),
                                    mode=Types.SectionMode.RIGHT),
                     # 子项
                     Module.Divider(),
                     # 子项
-                    Module.Section(f'常用角色:{solve["legends"]["selected"]["LegendName"]}'),
+                    Module.Section(f'常用角色:{player_player}'),
                     # 子项
-                    Module.Container(Element.Image(src=f'{solve["legends"]["selected"]["ImgAssets"]["icon"]}')),
+                    Module.Container(Element.Image(src=f'{player_player_icon}')),
                     # 颜色设置
                     color='#DE1717'))
             )
