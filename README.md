@@ -1,8 +1,9 @@
 # custom-khl-bot
 
-**使用到的库**
+**使用到的库、API**
 
 - [Khl.py](https://github.com/TWT233/khl.py)
+- [Apex Legends Api](https://apexlegendsapi.com/)
 
 **架构图**
 
