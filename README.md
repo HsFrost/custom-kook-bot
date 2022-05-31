@@ -1,7 +1,5 @@
 # custom-khl-bot
 
----
-
 **使用到的库**
 
 - [Khl.py](https://github.com/TWT233/khl.py)
