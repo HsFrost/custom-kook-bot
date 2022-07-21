@@ -6,14 +6,14 @@
 - [Apex Legends Api](https://apexlegendsapi.com/)
 
 **架构图**
-
+- /khl-bot/config里面填入具体的机器人信息
 ![](架构图.png)
 
 **功能**
 
 ![](功能.png)
 
-- /khl-bot/config里面填入具体的机器人信息
+
 
 
 **项目后记**
