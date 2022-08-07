@@ -1,4 +1,4 @@
-# custom-khl-bot
+# custom-kook-bot
 
 **使用到的库、API**
 
