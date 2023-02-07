@@ -1,17 +1,17 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="kook-bot" type="PythonConfigurationType" factoryName="Python">
-    <module name="custom-kook-bot" />
+    <module name="custom-khl-bot" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="PYTHONUNBUFFERED" value="1" />
     </envs>
-    <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/khl-bot" />
-    <option name="IS_MODULE_SDK" value="true" />
+    <option name="SDK_HOME" value="D:\Users\23842\anaconda3\python.exe" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/kook-bot" />
+    <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/khl-bot/main.py" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kook-bot/main.py" />
     <option name="PARAMETERS" value="" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />

@@ -32,9 +32,7 @@ PREFIX = ['.']
 @bot.command(name='hello', prefixes=PREFIX)
 async def hello(msg: Message, term: str = ''):
 
-    # :param msg: (忽略)
-    # :param term: 指令['','time','help']
-    # :return:
+    # term(指令)['','time','help']
 
     if term == '':
         await msg.reply('world for you!')
@@ -50,26 +48,23 @@ async def hello(msg: Message, term: str = ''):
             )
         )
     else:
-        await msg.reply('Error,some thing has wrong')
+        await msg.reply('发生错误，有什么东西坏掉了¯\_(ツ)_/¯')
 
 
 # apex战绩查询
 @bot.command(name='apex', prefixes=PREFIX)
 async def apex(msg: Message, term: str = '', player: str = '', platform: str = 'PC'):
 
-    # :param msg: (默认值)
-    # :param term: 指令
-    # :param player: 玩家ID
-    # :param platform: 玩家平台 ['PC'(Origin or Steam),'PS4'(Playstation 4/5) or 'X1'(Xbox)]
-    # :return:
+    # term（子指令）：[`地图`,`查询`]
+    # player（玩家名字）
+    # platform（平台）：['PC'(Origin 或 Steam游戏ID),'PS4'(PS4或PS5游戏ID),'X1'(Xbox游戏ID)]
 
     if term == '查询':
         # solve为向api发送请求的返回解
-        # GET https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM
-        solve = (
-            requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
+        # get(https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM)
+        solve = requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}").json()
         if "Error" not in solve.keys():
-            # 几组玩家参数
+            # 解析
             player_name = f'玩家：{solve["global"]["name"]}'
             player_level = f'等级：{solve["global"]["level"]}'
             player_rank = f'段位：{solve["global"]["rank"]["rankName"]}{solve["global"]["rank"]["rankDiv"]}:'\
@@ -80,36 +75,36 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
             # 回复
             await msg.reply(
                 CardMessage(Card(
-                    # 子项
+                    # 头部
                     Module.Header('查询结果：'),
                     # 分割线
                     Module.Divider(),
-                    # 子项
+                    # 段落
                     Module.Section(f'{player_name}\n{player_level}\n{player_rank}',
                                    accessory=Element.Image(src=f'{player_rank_icon}'),
                                    mode=Types.SectionMode.RIGHT),
-                    # 子项
+                    # 分割线
                     Module.Divider(),
-                    # 子项
+                    # 段落
                     Module.Section(f'常用角色:{player_player}'),
-                    # 子项
+                    # 图片
                     Module.Container(Element.Image(src=f'{player_player_icon}')),
                     # 颜色设置
                     color='#DE1717'))
             )
-        # 选择支
+        # 收集错误参数
         elif "Error" in solve.keys():
             await msg.reply(f'ERROR:{solve["Error"]}')
-        # 选择支
+        # 其它报错一律归类
         else:
-            await msg.reply("Error,some thing has wrong")
-    # 选择支
+            await msg.reply("发生错误，在调用Apex_API时有什么东西坏掉了¯\_(ツ)_/¯")
+    # 地图分支指令
     elif term == '地图':
         await msg.reply("暂时未实装")
-    # 选择支
+    # 帮助分支指令
     elif term == '帮助':
         await msg.reply("暂时未实装")
-    # 选择支
+    # 未知指令
     else:
         await msg.reply("Command not Found")
 
@@ -118,14 +113,12 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
 @bot.command(name='roll', prefixes=PREFIX)
 async def roll(msg: Message, t_min: int, t_max: int, n: int = 1):
 
-    # :param msg: （忽略）
-    # :param t_min: 色子的最小点数
-    # :param t_max: 色子的最大点数
-    # :param n:     色子掷几次
-    # :return:
+    # t_min: 色子的最小点数
+    # t_max: 色子的最大点数
+    # n:     色子掷几次
 
     result = [random.randint(t_min, t_max) for i in range(n)]
-    await msg.reply(f'you got: {result}')
+    await msg.reply(f'你分别得到了: {result}')
 
 
 bot.run()
