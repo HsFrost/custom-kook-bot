@@ -13,8 +13,8 @@ import command_hello_help
 logging.basicConfig(level='INFO')
 
 # 导入凭证json
-with open('config/khl_bot_config.json', 'r', encoding='utf-8') as a, open('config/apex_legends_api.json', 'r',
-                                                                          encoding='utf-8') as b:
+with open('config/kook_bot_config.json', 'r', encoding='utf-8') as a, open('config/apex_legends_api.json', 'r',
+                                                                           encoding='utf-8') as b:
     khl_bot_config = json.load(a)
     apex_legends_api = json.load(b)
 
