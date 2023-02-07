@@ -62,7 +62,7 @@ async def apex(msg: Message, term: str = '', player: str = '', platform: str = '
     if term == '查询':
         # solve为向api发送请求的返回解
         # get(https://api.mozambiquehe.re/bridge?auth=YOUR_API_KEY&player=PLAYER_NAME&platform=PLATFORM)
-        solve = requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}").json()
+        solve = (requests.get(f"https://api.mozambiquehe.re/bridge?auth={auth}&player={player}&platform={platform}")).json()
         if "Error" not in solve.keys():
             # 解析
             player_name = f'玩家：{solve["global"]["name"]}'
