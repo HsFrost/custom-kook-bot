@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="khl-bot" type="PythonConfigurationType" factoryName="Python">
-    <module name="custom-khl-bot" />
+  <configuration default="false" name="kook-bot" type="PythonConfigurationType" factoryName="Python">
+    <module name="custom-kook-bot" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
